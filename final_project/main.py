@@ -1,12 +1,28 @@
+
+"""
+main.py - Final version of Student Analyzer
+Author: Alireza Ahmadi Dehnavi
+Description: Load student scores, compute statistics, and export processed results.
+"""
+
 import csv
 import os
 from statistics import mean, median, mode, StatisticsError, variance, stdev
+from pathlib import Path
+
+# === Paths ===
+DATA_PATH = Path("data/students.csv")
+OUTPUT_PATH = Path("results/processed.csv")
 
 def load_student_data(file_path):
     """
     Load student data from a CSV file.
-    Expects columns: Name, Math, Science, History.
-    Returns a list of dictionaries with name and scores.
+
+    Args:
+        file_path (str or Path): Path to the input CSV file.
+
+    Returns:
+        List[dict]: List of students with name and scores.
     """
     students = []
     with open(file_path, newline='') as f:
@@ -25,8 +41,13 @@ def load_student_data(file_path):
 
 def calculate_averages(students):
     """
-    Calculate the average score for each student.
-    Adds 'average' field to each student dictionary.
+    Calculate average score for each student.
+
+    Args:
+        students (List[dict]): Students with scores
+
+    Returns:
+        List[dict]: Updated list with 'average' field
     """
     for student in students:
         student["average"] = mean(student["scores"])
@@ -34,8 +55,13 @@ def calculate_averages(students):
 
 def calculate_stats(students):
     """
-    Compute overall statistics for the average scores.
-    Returns a dictionary with median, mode, range, variance, and standard deviation.
+    Compute overall statistics from student averages.
+
+    Args:
+        students (List[dict]): Students with 'average' scores
+
+    Returns:
+        dict: Dictionary with median, mode, range, variance, std deviation
     """
     averages = [s["average"] for s in students]
     try:
@@ -49,13 +75,16 @@ def calculate_stats(students):
         "variance": variance(averages),
         "std_dev": stdev(averages)
     }
-def export_results(students, file_path="results/processed.csv"):
+
+def export_results(students, file_path=OUTPUT_PATH):
     """
-    Export student data with calculated averages to a CSV file.
-    Creates the output folder if it doesn't exist.
+    Export student data with averages to CSV file.
+
+    Args:
+        students (List[dict]): List of students with 'average'
+        file_path (Path): Path to save the output CSV
     """
-    import os
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    os.makedirs(file_path.parent, exist_ok=True)
     with open(file_path, "w", newline='') as f:
         writer = csv.writer(f)
         writer.writerow(["name", "math", "science", "history", "average"])
@@ -67,20 +96,17 @@ def export_results(students, file_path="results/processed.csv"):
                 s["scores"][2],
                 f"{s['average']:.2f}"
             ])
-if __name__ == "__main__":
-    # Load data from the CSV file
-    students = load_student_data(r"D:\AI\student_analyzer_complete\data\students.csv")
 
-    # Calculate each student's average
+def main():
+    students = load_student_data(DATA_PATH)
     students = calculate_averages(students)
-
-    # Compute overall statistics
     stats = calculate_stats(students)
-
-    # Export the processed results
     export_results(students)
 
-    # Print final statistics
     print("✅ Final Statistics:")
     for key, value in stats.items():
         print(f"{key.title()}: {value}")
+
+if __name__ == "__main__":
+    main()
+قبل 
