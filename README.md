@@ -1,31 +1,45 @@
-# Student Analyzer
 
-A simple Python project that demonstrates data handling, statistical analysis, and reporting for student scores.
+# 🎓 Student Analyzer - Migration Portfolio Project
+
+This project simulates a real-world data analysis task for a school or academic institution. It helps school administrators extract actionable insights from students' scores using Python and built-in statistical tools.
 
 ---
 
-## 💡 Features
+## 💼 Purpose
+
+This project is part of my professional portfolio to showcase my skills in:
+- Data processing with Python
+- Statistical computation (mean, median, mode, variance, etc.)
+- Modular code design and test-driven development
+- Exporting processed data for reporting
+
+---
+
+## 🔍 Features
 
 - Load student scores from a CSV file
 - Calculate average, median, mode, range, variance, and standard deviation
 - Identify top-performing students
-- Export results to a new CSV file
-- Unit tests for core functions
-- Clean and modular code
+- Export results to a clean CSV report
+- Unit testing for core statistical functions
+- Step-by-step development structure
+- Final version ready for production or extension
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Project Structure
 
 ```
-project-1-student-analyzer/
+student-analyzer/
 ├── data/
-│   └── students.csv              # Input data
-├── learning_steps/              # Step-by-step development
-│   └── step1_load_data.py
-│   └── ...
-├── final_project/
-│   └── main.py                  # Final version
+│   └── students.csv              # Raw student score data
+├── learning/
+│   ├── step1_load_data.py
+│   ├── step2_calculate_average.py
+│   ├── step3_calculate_median.py
+│   ├── ...
+├── final/
+│   └── main.py                   # Final implementation
 ├── test_student_analyzer.py     # Unit tests
 ├── README.md                    # Project documentation
 ```
@@ -35,18 +49,33 @@ project-1-student-analyzer/
 ## ▶️ How to Run
 
 ```bash
-python final_project/main.py
+python final/main.py
 ```
 
 ---
 
-## ⚙️ Requirements
+## 📦 Requirements
 
 - Python 3.x
-- Libraries: `csv`, `statistics`, `unittest` (all built-in)
+- Built-in libraries only:
+  - csv
+  - statistics
+  - unittest
 
 ---
 
-## 📘 Author
+## 🚀 Future Improvements
 
-Created by Alireza Ahmadi Dehnavi as part of a public learning journey into Python and AI.
+- Web-based interface for teachers
+- Integration with school management systems (API)
+- Visualization of score trends (using matplotlib or seaborn)
+- Multilingual report export (English, French, etc.)
+
+---
+
+## ✍️ Author
+
+Designed and implemented by **Alireza Ahmadi Dehnavi**  
+Part of a migration-ready portfolio for **AI and data-related roles in Canada**  
+
+---
