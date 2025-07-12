@@ -1,0 +1,35 @@
+
+# 🧠 Learning Steps - Student Analyzer
+
+This folder contains the step-by-step educational development process of the Student Analyzer project.
+
+Each file focuses on a specific task related to data analysis, written in clean, modular Python code.  
+It demonstrates a clear and progressive learning journey suitable for both educational and professional portfolios.
+
+---
+
+## 📂 File Overview
+
+| Step | File                        | Purpose |
+|------|-----------------------------|---------|
+| 1    | step1_load_data.py          | Load student data from CSV |
+| 2    | step2_calculate_average.py  | Calculate average score for each student |
+| 3    | step3_calculate_median.py   | Compute median of all averages |
+| 4    | step4_calculate_mode.py     | Compute mode of all averages with exception handling |
+| 5    | step5_calculate_range.py    | Compute range of average scores |
+| 6    | step6_variance_std.py       | Calculate variance and standard deviation |
+| 7    | step7_export_results.py     | Export results to a structured CSV |
+| 8    | step8_tests.py              | Basic unit tests for key functions |
+
+---
+
+## 💼 Notes
+
+- All scripts use only Python built-in modules (`csv`, `statistics`, `unittest`, etc.)
+- Each script is designed for readability, testability, and progressive learning.
+- These files reflect the growth path of a Python learner building a real-world mini-project.
+
+---
+
+**Author:** Alireza Ahmadi Dehnavi  
+**Project:** Migration portfolio for data/AI roles  
